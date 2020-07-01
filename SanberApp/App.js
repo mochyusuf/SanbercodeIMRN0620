@@ -3,10 +3,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import YoutubeUI from './Tugas/Tugas12/App';
+import LoginUI from './Tugas/Tugas13/AboutScreen';
 
 export default function App() {
   return (
-    <YoutubeUI />
+    <LoginUI />
     // <View style={styles.container}>
     //   <Text>Open up App.js to start working on your app!</Text>
     //   <StatusBar style="auto" />
