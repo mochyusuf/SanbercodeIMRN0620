@@ -2,12 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import YoutubeUI from './Tugas/Tugas12/App';
-import LoginUI from './Tugas/Tugas13/AboutScreen';
+import UI from './Tugas/Tugas14/SkillScreen';
 
 export default function App() {
   return (
-    <LoginUI />
+    <UI />
     // <View style={styles.container}>
     //   <Text>Open up App.js to start working on your app!</Text>
     //   <StatusBar style="auto" />
