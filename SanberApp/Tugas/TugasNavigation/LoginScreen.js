@@ -12,7 +12,11 @@ import {
   Button 
 } from 'react-native';
 
-export default class LoginScreen extends Component {
+import { AuthContext } from "./context";
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -33,12 +37,13 @@ export default class LoginScreen extends Component {
           />
         </View>
         <View style={styles.buttonItem}>
-          <Button style={styles.buttonLogin} 
-          onPress={() => signIn()}>
-            <Text style={styles.buttonTitle}>
+          <TouchableOpacity style={styles.buttonLogin}
+          onPress={() => this.props.signIn()} 
+          >
+            <Text style={{fontSize:30}}>
               Login
             </Text>
-          </Button>
+          </TouchableOpacity>
         </View>
         <View style={{alignItems: 'center',justifyContent: 'center'}}>
           <Text style={{fontSize:30}}>
@@ -46,14 +51,12 @@ export default class LoginScreen extends Component {
           </Text>
         </View>
         <View style={styles.buttonItem}>
-          <Button style={styles.buttonRegister}
-          onPress={() =>
-            console.log('X')
-          }>
+          <TouchableOpacity style={styles.buttonRegister}
+          onPress={() => this.props.navigation.push('Register')} >
             <Text style={styles.buttonTitle}>
               Daftar
             </Text>
-          </Button>
+          </TouchableOpacity>
         </View>
       </View>
     );
