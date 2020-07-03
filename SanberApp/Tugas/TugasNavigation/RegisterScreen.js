@@ -12,7 +12,11 @@ import {
   Button 
 } from 'react-native';
 
-export default class LoginScreen extends Component {
+import { AuthContext } from "./context";
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -26,34 +30,33 @@ export default class LoginScreen extends Component {
           />
         </View>
         <View style={styles.input}>
+          <Text style={styles.titleInput}>Email</Text>
+          <TextInput
+            style={styles.textInput}
+          />
+        </View>
+        <View style={styles.input}>
           <Text style={styles.titleInput}>Password</Text>
           <TextInput
             style={styles.textInput}
             secureTextEntry={true}
           />
         </View>
-        <View style={styles.buttonItem}>
-          <Button style={styles.buttonLogin} 
-          onPress={() => signIn()}>
-            <Text style={styles.buttonTitle}>
-              Login
-            </Text>
-          </Button>
-        </View>
-        <View style={{alignItems: 'center',justifyContent: 'center'}}>
-          <Text style={{fontSize:30}}>
-            Atau
-          </Text>
+        <View style={styles.input}>
+          <Text style={styles.titleInput}>Ulangi Password</Text>
+          <TextInput
+            style={styles.textInput}
+            secureTextEntry={true}
+          />
         </View>
         <View style={styles.buttonItem}>
-          <Button style={styles.buttonRegister}
-          onPress={() =>
-            console.log('X')
-          }>
+          <TouchableOpacity style={styles.buttonRegister}
+          onPress={() => this.props.signUp()} 
+          >
             <Text style={styles.buttonTitle}>
               Daftar
             </Text>
-          </Button>
+          </TouchableOpacity>
         </View>
       </View>
     );
