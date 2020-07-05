@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import UI from './Tugas/TugasNavigation/index';
+import UI from './Tugas/Quiz3/index';
 // import UI from './Tugas/Tugas15/index';
 
 export default function App() {
