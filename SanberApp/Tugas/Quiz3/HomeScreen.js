@@ -26,7 +26,7 @@ export default class HomeScreen extends React.Component {
     
     // Kode di sini
     let totalPrice = this.state.totalPrice + parseInt(price)
-    this.state.totalPrice = totalPrice;
+    this.setState({totalPrice : totalPrice});
   }
 
 
@@ -68,7 +68,7 @@ export default class HomeScreen extends React.Component {
         
         <FlatList
           data={data.produk}
-          renderItem={(video)=><ListItem data={video.item} updatePrice={this.updatePrice} state={this.state}/>}
+          renderItem={(video)=><ListItem data={video.item} updatePrice={this.updatePrice.bind(this)}/>}
           keyExtractor={(item)=>item.id.toString()}
           ItemSeparatorComponent={()=><View style={{height:20,backgroundColor:'#E5E5E5'}}/>}
         />
